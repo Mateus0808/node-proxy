@@ -1,4 +1,4 @@
-# Full Cycle Node.js App with Docker
+# Node.js App with Docker
 
 ## Como Executar
 **1. Clonar o repositório**
