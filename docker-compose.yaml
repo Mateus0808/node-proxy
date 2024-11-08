@@ -17,7 +17,9 @@ services:
     build: 
       context: nodeapp
     container_name: app
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh node index.js
+    ports:
+      - "3000:3000"
     networks:
       - node-network
     volumes:
