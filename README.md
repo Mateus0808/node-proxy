@@ -9,8 +9,8 @@ cd node-proxy
 ```
 
 **2. Construir a Imagem Docker e Executar servidor node.js**
-2.1 Criar uma pasta chamada **mysql** na raiz do projeto
-2.2 Crie uma tabela chamada **people**
+- Criar uma pasta chamada **mysql** na raiz do projeto
+- Crie uma tabela chamada **people**
 ```bash
 create table people (id int not null auto_increment, name varchar(255), primary key(id))
 ```
@@ -18,13 +18,9 @@ create table people (id int not null auto_increment, name varchar(255), primary 
 Construa a imagem Docker com o seguinte comando:
 ```bash
 docker-compose up -d
-
-docker exec -it app bash
-
-node index.js
 ```
 
 **3. Acessar a aplicação**
-Acesse: http://localhost:8080
+- URL: http://localhost:8080
 
 
