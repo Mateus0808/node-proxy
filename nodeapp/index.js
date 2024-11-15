@@ -13,7 +13,10 @@ const config = {
 
 const connection = mysql.createConnection(config)
 
-const sql = `INSERT INTO people(name) VALUES('Mateus')`
+const sqlCreateTablePeople = `CREATE TABLE people(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(255), PRIMARY key (id));`
+connection.query(sqlCreateTablePeople)
+
+const sql = `INSERT INTO people(name) VALUES('Dobby')`
 connection.query(sql)
 
 
@@ -24,8 +27,6 @@ app.get("/", (req, res) => {
         if (error) {
             return res.status(500).send(`Error retrieving data from database. ${error}`);
         }
-
-        // Transformar resultados em uma lista de usuários
         const usersList = results.map(user => `<li>${user.name}</li>`).join("");
 
         res.send(`
